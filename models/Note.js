@@ -1,9 +1,18 @@
 const mongoose = require("mongoose");
 
 const noteSchema = new mongoose.Schema({
-  title: String,
-  subject: String,
-  file: String,
+  title: {
+    type: String,
+    required: true,
+  },
+  subject: {
+    type: String,
+    required: true,
+  },
+  file: {
+    type: String,
+    required: true,
+  }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Note", noteSchema);
